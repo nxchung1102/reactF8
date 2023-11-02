@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+  </head>
+  <body>
+    <h1>add react to website</h1>
+  </body>
+  <script>
+    //DOM
+    const h1DOM = document.createElement("h1");
+    h1DOM.title = "hello";
+    h1DOM.className = "heading";
+    h1DOM.innerText = "hello guys";
+    document.body.appendChild(h1DOM);
+    //React
+    const h1React = React.createElement(
+      "h1",
+      {
+        title: "hello",
+        className: "heading",
+      },
+      "hello guys"
+    );
+    console.dir(h1DOM);
+    console.log(h1React);
+    //b2
+    //ul>li DOM
+    const ulDOM = document.createElement("ul");
+    ulDOM.id = "ul-id";
+    ulDOM.style = "color:green; font-size: 30px;";
+    const liDOM1 = document.createElement("li");
+    liDOM1.innerText = "js";
+    liDOM1.id = "li-1";
+    const liDOM2 = document.createElement("li");
+    liDOM2.innerText = "react";
+    ulDOM.appendChild(liDOM1);
+    ulDOM.appendChild(liDOM2);
+    document.body.appendChild(ulDOM);
+
+    //ul>li React
+    const ulReact = React.createElement(
+      "ul",
+      {
+        id: "ul-id",
+        style: "color:green; font-size: 30px;",
+      },
+      React.createElement(
+        "li",
+        {
+          id: "li-1",
+        },
+        "js"
+      ),
+      React.createElement("li", {}, "react")
+    );
+    console.dir(ulDOM);
+    console.log(ulReact);
+    // b3
+    //DOM
+    const divDOM = document.createElement("div");
+    divDOM.className = "post-item";
+    const h2DOM = document.createElement("h2");
+    h2DOM.title = "learn React f8";
+    h2DOM.innerText = "learn react";
+    const pDOM = document.createElement("p");
+    pDOM.innerText = "learn reactjs-f8";
+    divDOM.appendChild(h2DOM);
+    divDOM.appendChild(pDOM);
+    document.body.appendChild(divDOM);
+    //React
+    const divReact = React.createElement(
+      "div",
+      {
+        className: "post-item",
+      },
+      React.createElement(
+        "h2",
+        {
+          title: "learn react f8",
+        },
+        "learn react"
+      ),
+      React.createElement("p", {}, "learn reactjs-f8")
+    );
+    console.dir(divDOM);
+    console.log(divReact);
+  </script>
+</html>

@@ -1,7 +1,11 @@
 import './App.css';
 import { useState, useEffect } from "react";
 
-const tables = [2, 3, 4, 5, 6, 7, 8, 9];
+const tables = [];
+
+for (let index = 1; index <= 100; index++) {
+  tables.push(index);
+}
 
 function App() {
   const [type, setType] = useState(2);
@@ -23,6 +27,10 @@ function App() {
     <div>
       {tables.map(table => (
         <button
+          style={type === table ? {
+            color: 'black',
+            backgroundColor: 'gray'
+          } : {}}
           onClick={() => setType(table)}
           key={table}>
           {table}

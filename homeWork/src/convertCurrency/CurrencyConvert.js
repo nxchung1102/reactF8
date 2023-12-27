@@ -6,6 +6,10 @@ const CurrencyConvert = () => {
     const [toCurrency, setToCurrency] = useState('USD');
     const [exchangedCurrency, setExchangedCurrency] = useState(0);
 
+    function formatCurrency(amount) {
+        const formattedAmount = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return formattedAmount;
+    }
     const handleInputFrom = (value) => {
         setCurrency(value)
     }
@@ -74,7 +78,7 @@ const CurrencyConvert = () => {
                     </select>
                 </div>
             </form>
-            <input value={exchangedCurrency} />
+            <input value={formatCurrency(exchangedCurrency)} />
         </div>
     );
 };
